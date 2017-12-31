@@ -73,7 +73,7 @@ Message::Message(){
 		getch();
 	}
 	while(infile.get(ch))
-		bestScore.push_back(ch);
+		currScore.push_back(ch);
 	infile.close();
 }
 
