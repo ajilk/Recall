@@ -1,11 +1,13 @@
 #include "Digits.h"
 
 Digits::Digits(){	
-	ifstream infile;
+	string dir = "../resources/digits/";
 	string filename;
 	char ch;
+	
+	ifstream infile;
 	for(int i=0; i<10; i++){
-		filename = "../digits/" + std::to_string(i) + ".txt";
+		filename = dir + std::to_string(i) + ".txt";
 		infile.open(filename);
 		if(!infile.is_open()){
 			mvprintw(0,0,"ERROR: Unable to open file %d.txt",i);

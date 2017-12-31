@@ -3,6 +3,8 @@
 
 #include <ncurses.h>
 #include <stdlib.h>	//exit()
+#include <fstream>
+#include <vector>
 #include "Digits.h"
 
 class Screen{
@@ -14,7 +16,9 @@ public:
 	int getRows();
 	int getColumns();
 	bool kbhit();
-	void setup();
+	void update(int highlightNumber);
+	void createNewWin(int rows, int cols, int start_y, int start_x);
+	void printMsg(WINDOW* window, vector<char> msg, int start_y, int start_x);
 	~Screen();
 };
 

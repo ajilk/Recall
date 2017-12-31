@@ -1,10 +1,20 @@
 #include <ncurses.h>
 #include "Screen.h"
 #include "Digits.h"
+#include "Message.h"
 int main(){
 	Screen screen;
 	Digits digits;
-	screen.setup();	
+	Message message;
+	WINDOW* bestScore = newwin(18,40,15,7); 	wborder(bestScore, 0,0,0,0,0,0,0,0);
+	WINDOW* currLevel = newwin(18,40,15,130);	wborder(currLevel, 0,0,0,0,0,0,0,0);
+	WINDOW* msgBox = newwin(5,36, 1, 70);		//wborder(msgBox, 0,0,0,0,0,0,0,0);
+
+	screen.update(0);	
+	screen.printMsg(msgBox, message.getMessage("react"), 0, 0);
+//	wrefresh(bestScore); 
+//	wrefresh(currLevel);
+//	wrefresh(msgBox);
 	return 0;
 }
 
