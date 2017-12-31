@@ -15,6 +15,6 @@ If not, you level down. Notice that your score is your level.
 - Colorful feedback
 
 ### Observation
-	(pending)
+(pending)
 ---
 ### Recall is part of the [Concept](https://github.com/azimex/Concept) Series.
