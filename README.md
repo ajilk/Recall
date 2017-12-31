@@ -13,8 +13,8 @@ If not, you level down. Notice that your score is your level.
 - Shows your best score
 - Shows your current score
 - Colorful feedback
-
 ### Observation
 (pending)
+
 ---
 ### Recall is part of the [Concept](https://github.com/azimex/Concept) Series.
