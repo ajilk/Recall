@@ -15,18 +15,22 @@ private:
 	int columns;
 	Digits digits;
 	Message message;
-	WINDOW* msgBox;
-	WINDOW* bestScore;
-	WINDOW* currScore;	
+	struct Coordinate{
+		int Y;
+		int X;
+		Coordinate() {Y=0; X=0;}
+		Coordinate(int Y, int X):Y(Y), X(X) {}
+	};
+	Coordinate bestScore, currScore, msg;
 public:
 	Screen();
-	int getRows();
-	int getColumns();
+	int getRows() { return rows; }
+	int getColumns() { return columns; }
 	bool kbhit();
-	void highlight(int highlightNumber);
-	void update(string bestScoreValue, string currScoreValue);
+	void highlight(int highlightNumber, int mode);
+	void update(string bestScoreValue, string currScoreValue, string msg);
 	void printMsg(WINDOW* window, vector<char> msg, int start_y, int start_x);
-	vector<int> getRandomPattern();
+	vector<int> getRandomPattern(int length);
 	~Screen();
 };
 
