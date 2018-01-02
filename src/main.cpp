@@ -31,7 +31,9 @@ int main(){
 					napms(1500);
 				}else{
 					screen.highlight(ch-'0', 3);
-					if(i==pattern.size()-1) napms(500);
+					if(i==pattern.size()-1) napms(150);
+					napms(100);
+					screen.highlight(ch-'0', 0);
 				}
 				i++;
 			}else
