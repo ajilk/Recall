@@ -22,9 +22,9 @@ If not, you start all over. Notice that your score is your level.
 ### Observation
 The project was less tricky than I thought it would be. I liked how it
 turned out. Although project would definitely benefit from little bit of
-simplification. It does overcomplicate simple concepts. The is really lowers
+simplification. It does overcomplicate simple concepts. This really lowers
 flexibility. Most of the locations where certain messages appear were hardcoded,
-which is was not really the goal.
+which was really not the goal.
 
 ---
 ### Recall is part of the [Concept](https://github.com/azimex/Concept) Series.
