@@ -4,19 +4,40 @@
 #include "Message.h"
 int main(){
 	Screen screen;
-	Digits digits;
-	Message message;
-	WINDOW* bestScore = newwin(18,45,15,7); 	//wborder(bestScore, 0,0,0,0,0,0,0,0);
-	WINDOW* currScore = newwin(18,45,15,130);	//wborder(currScore, 0,0,0,0,0,0,0,0);
-	WINDOW* msgBox = newwin(5,36, 1, 70);		//wborder(msgBox, 0,0,0,0,0,0,0,0);
+	screen.update("0", "0");
 
-	screen.update(0);	
-	screen.printMsg(msgBox, message.getMessage("react"), 0, 0);
-	screen.printMsg(bestScore, message.getMessage("bestScore"), 0, 0);
-	screen.printMsg(currScore, message.getMessage("currScore"), 0, 0);
-//	wrefresh(bestScore); 
-//	wrefresh(currLevel);
-//	wrefresh(msgBox);
+	char ch = getch();
+	int bestScore = 0;
+	int currScore = 0;
+
+	while(ch != 'q' && ch != 'Q'){
+		vector<int> pattern = screen.getRandomPattern();
+		for(int i=0; i<pattern.size(); i++){
+			screen.highlight(pattern.at(i));
+			napms(1000);
+		}
+		screen.highlight(0);	
+		int i=0;
+		bool correct = true;	
+		while(i<pattern.size() && correct){	
+			ch = getch();
+			screen.highlight(ch-'0');
+			if((ch-'0') != pattern.at(i)) correct = false;
+			i++;
+		}
+		napms(1000);
+		screen.highlight(0);	
+		if(correct == true){
+			currScore++;
+			if(currScore > bestScore)
+				bestScore++;
+		}
+		else 
+			currScore=0;
+		screen.update(to_string(bestScore), to_string(currScore));
+		ch = getch();
+	}
+	
 	return 0;
 }
 
@@ -29,7 +50,7 @@ Steps
 		pattern.push_back(number);	//Save the pattern to vector
 	
 	To check if they got it right
-		getch until enter is pressed
+		check one by one, indicate when they get it wrong	
 		check if numbers match the saved pattern
 			if(yes)
 				level++; start_over;
