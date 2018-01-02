@@ -5,10 +5,9 @@ Although this is a fun little game, I began to lose interest real quick when
 I realized I could not go passed Level 9. I was little dissappointed.
 ### How to Play
 Set up these for best experience
-window size: 49 rows and 177 cols <br/>
-	printf '\e[8;49;177t' 
-<br/> font size: <br/>
-	14pt
+<br/> 
+window size: 49 rows and 177 cols printf \e[8;49;177t 
+<br/> font size: 14pt <br/> <br/>
 Once you launch the game, press any key to start. 
 Pattern will be displayed based on your level.
 Level 1 will display a pattern with length 1. The challenge is 
