@@ -19,6 +19,7 @@ Digits::Digits(){
 		}
 		infile.close();
 	}
+
 	
 	dir = "../resources/digits/regular/";	
 	for(int i=0; i<10; i++){

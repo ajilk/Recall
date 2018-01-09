@@ -76,6 +76,7 @@ void Screen::highlight(int highlightNumber, int mode){
 }
 
 void Screen::update(string bestScoreValue, string currScoreValue, string msgName){
+	clear();
 	printMsg(stdscr, message.getMessage(msgName),msg.Y, msg.X);
 	printMsg(stdscr, message.getMessage("bestScore"), bestScore.Y, bestScore.X);
 	printMsg(stdscr, message.getMessage("currScore"), currScore.Y, currScore.X);
