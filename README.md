@@ -1,5 +1,5 @@
 # Recall
-Addictive, fun game that pushes your ability to recall /atterns
+Addictive, fun game that pushes your ability to recall patterns
 <br/> <br/> <img src="demo.gif" width="400" /> <br/> <br/>
 Although this is a fun little game, I began to lose interest real quick when
 I realized I could not go passed Level 9. I was little dissappointed.
